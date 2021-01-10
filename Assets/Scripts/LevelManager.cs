@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         return true;
     }
     
+
     public bool LoadNextLevel()
     {
         UnloadLevel();
@@ -39,11 +40,13 @@ public class LevelManager : MonoBehaviour
         return LoadLevel(currentLevelID);
     }
 
+
     public bool ReloadLevel()
     {
         UnloadLevel();
         return LoadLevel(currentLevelID);
     }
+
 
     public bool UnloadLevel()
     {
@@ -55,6 +58,7 @@ public class LevelManager : MonoBehaviour
         }
         return false;
     }
+
 
     public void LevelComplited()
     {

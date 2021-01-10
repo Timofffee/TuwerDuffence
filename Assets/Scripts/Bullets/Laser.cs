@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// [RequireComponent(typeof(LineRenderer))]
-// [RequireComponent(typeof(AudioSource))]
 public class Laser : BulletController {
 
     public AudioClip shootSound;
 
-    private LineRenderer lr;
+    private LineRenderer lineRenderer;
     private AudioSource source;
-    private float lowPitchRange = .9F;
-    private float highPitchRange = 1.1F;
+    private float lowPitchRange = 0.9f;
+    private float highPitchRange = 1.1f;
 
     void Start () {
-        lr = GetComponent<LineRenderer>();
-        lr.SetPosition(0, new Vector3());
-        lr.SetPosition(1, new Vector3());
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.SetPosition(0, Vector3.zero);
+        lineRenderer.SetPosition(1, Vector3.zero);
         
         source = GetComponent<AudioSource>();
-        source.pitch = Random.Range (lowPitchRange,highPitchRange);
+        source.pitch = Random.Range(lowPitchRange, highPitchRange);
         source.PlayOneShot(shootSound);
         
         StartCoroutine(Shoot());
@@ -41,9 +39,9 @@ public class Laser : BulletController {
     void Update () {
         if (target == null)
         {
-            lr.enabled = false;
+            lineRenderer.enabled = false;
             return;
         }
-        lr.SetPosition(1, target.transform.position - transform.position + new Vector3(0f, 0.1f, 0f));
+        lineRenderer.SetPosition(1, target.transform.position - transform.position + new Vector3(0f, 0.1f, 0f));
     }
 }

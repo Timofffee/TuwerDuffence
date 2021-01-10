@@ -6,10 +6,9 @@ public class TowerController : MonoBehaviour
 {
     private List<GameObject> targets = new List<GameObject>();
 
-    
     [Range(0.01f, 10.0f)]
     public float latency = 2.0f;
-    private float timer;
+    private float timer = 0f;
 
     public GameObject bulletPrefab;
     public Transform spawnPos;
@@ -50,7 +49,7 @@ public class TowerController : MonoBehaviour
                 if (targets.Count > 0)
                 {
                     Shoot(targets[0]);
-                    timer = 0;
+                    timer = 0f;
                 }
             }
         }
@@ -60,7 +59,7 @@ public class TowerController : MonoBehaviour
 
     private void Start()
     {
-        timer = latency/2.0f;
+        timer = latency/2;
         GameLogic.towerCreated++;
         GameLogic.score += additiveScore;
     }

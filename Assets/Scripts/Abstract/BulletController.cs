@@ -17,6 +17,4 @@ abstract public class BulletController : MonoBehaviour
             target = obj;
         }
     }
-    
-    // public abstract void SetTarget(GameObject obj);
 }

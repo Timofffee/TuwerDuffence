@@ -36,13 +36,13 @@ public class PathInspector : Editor
 
             GUIStyle style = new GUIStyle();
             style.normal.textColor = Color.black;
-            Handles.Label(point + new Vector3(0, 0.3f * size, 0), index.ToString(), style);
+            Handles.Label(point + new Vector3(0f, 0.3f * size, 0f), index.ToString(), style);
 		}
         else
         {
             GUIStyle style = new GUIStyle();
             style.normal.textColor = Color.white;
-            Handles.Label(point + new Vector3(0, 0.3f * size, 0), index.ToString(), style);
+            Handles.Label(point + new Vector3(0f, 0.3f * size, 0f), index.ToString(), style);
         }
 		return point;
 	}

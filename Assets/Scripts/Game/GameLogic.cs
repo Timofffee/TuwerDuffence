@@ -10,14 +10,13 @@ public class GameLogic : MonoBehaviour
     static public int score = 0;
     static public List<GameObject> enemies = new List<GameObject>();
     
-
     static private bool levelRunning = false;
     
-
     [HideInInspector]
     public EnemySpawner spawner;
 
     private float startTime = 0f;
+
 
     IEnumerator Lose()
     {
@@ -28,7 +27,6 @@ public class GameLogic : MonoBehaviour
         {
             GetComponent<HUD>().ShowLosePanel();
         }
-        
     }
 
 

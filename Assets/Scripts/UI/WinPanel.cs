@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class WinPanel : MonoBehaviour
 {
-    public Text timeText;
-    public Text killedText;
-    public Text scoreText;
+    public Text timeText, killedText, scoreText;
+
 
     public void UpdateStats(float time, int enemiesKilled, int towerCreated, int score)
     {

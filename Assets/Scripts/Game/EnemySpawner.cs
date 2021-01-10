@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     
-    private float timer = 0;
-    private float startTimer = 0;
+    private float timer = 0f;
+    private float startTimer = 0f;
     [Range(0, 10.0f)]
     public float startLatency = 1.0f;
     [Range(0.01f, 10.0f)]
@@ -51,7 +51,6 @@ public class EnemySpawner : MonoBehaviour
             waveEnded = !(currentEnemy < enemyPrefab.Length);
             timer -= delay;
         }
-
         timer += Time.deltaTime;
     }
 }

@@ -9,6 +9,7 @@ public class TowerBlock : MonoBehaviour
     private int current_tower_id = -1;
     private GameObject current_tower = null;
     
+
     public void UpgradeTower()
     {
         if (towers.Length - 1 > current_tower_id)
@@ -18,8 +19,7 @@ public class TowerBlock : MonoBehaviour
             {
                 Destroy(current_tower);
             }
-
-            current_tower = Instantiate(towers[current_tower_id], new Vector3(0, 0.5f, 0) + transform.position, transform.rotation, gameObject.transform);
+            current_tower = Instantiate(towers[current_tower_id], new Vector3(0f, 0.5f, 0f) + transform.position, transform.rotation, gameObject.transform);
         }
         
     }

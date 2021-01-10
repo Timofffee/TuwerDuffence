@@ -6,7 +6,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LevelManager))]
 public class HUD : MonoBehaviour
 {
-
     public Sprite iconVolumeEnabled;
     public Sprite iconVolumeDisabled;
 
@@ -28,6 +27,7 @@ public class HUD : MonoBehaviour
     private LevelManager levelManager;
 
     public bool volumeEnabled = true;
+
 
     public void SelectLevel()
     {
@@ -138,7 +138,7 @@ public class HUD : MonoBehaviour
 
     private void UpdateVolume()
     {
-        AudioListener.volume = volumeEnabled ? 1f : 0f;
+        AudioListener.volume = volumeEnabled ? 1.0f : 0f;
     }
 
 

@@ -9,16 +9,12 @@ public class PauseControl : MonoBehaviour
     {
         get { return _gameIsPaused; }
         set {
-            // if (!stateChanged)
-            // {
-                _gameIsPaused = value;
-                stateChanged = true;
-            // }
+            _gameIsPaused = value;
+            stateChanged = true;
         }
     }
     static private bool _gameIsPaused;
     
-
 
     void Update()
     {
@@ -33,16 +29,16 @@ public class PauseControl : MonoBehaviour
     {
         if(gameIsPaused)
         {
-            Time.timeScale = Mathf.Clamp(Time.timeScale - 0.01f, 0, 1.0f);
-            if (Time.timeScale == 0)
+            Time.timeScale = Mathf.Clamp(Time.timeScale - 0.01f, 0f, 1.0f);
+            if (Time.timeScale == 0f)
             {
                 stateChanged = false;
             }
         }
         else 
         {
-            Time.timeScale = Mathf.Clamp(Time.timeScale + 0.01f, 0, 1.0f);
-            if (Time.timeScale == 1)
+            Time.timeScale = Mathf.Clamp(Time.timeScale + 0.01f, 0f, 1.0f);
+            if (Time.timeScale == 1.0f)
             {
                 stateChanged = false;
             }
